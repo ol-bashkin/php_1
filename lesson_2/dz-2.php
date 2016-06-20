@@ -33,22 +33,48 @@
         
     caption("night", "Oleg");
     caption("day", "Max");
+    
     ?>
     
+    <h2>Вывод чисел от n до нуля с помощью цикла</h2>
+    
     <?php
+    
     /*
      * Функция выводящая все целые числа от n до нуля
      */
     
-    function numerizer($nmax)
+    function numerizer($nMax)
     {
-        for ($i = $nmax; $i >= 0; $i -= 1) {
+        for ($i = $nMax; $i >= 0; $i -= 1) {
             echo $i." ";
         }
     }
     
     numerizer(8);
     
+    ?>
+    
+    <h2>Вывод чиел от n до нуля с помощью рекурсии</h2>
+    
+    <?php
+    
+    /*
+     * Рекурсивная функция выводящая все целые числа от n до нуля
+     */
+    
+    function recursion($nMax, $mCurrent)
+    {
+        if ($nMax > $mCurrent) {
+            recursion($nMax, $mCurrent + 1);
+        }
+        
+            echo $mCurrent." ";
+        
+    }
+    
+    recursion(8, 0);
+
     ?>
     
 </body>
