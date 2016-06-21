@@ -10,29 +10,33 @@
      * Функция создающая заголовок с именем и временем суток
      */
     
-    function caption($daytime, $name)
+    function caption($name)
     {
-        switch ($daytime) {
-            case morning:
-                echo "<h1>Good morning, ".$name."</h1>";
-                break;
-            case day:
-                echo "<h1>Good afternoon, ".$name."</h1>";
-                break;
-            case evening:
-                echo "<h1>Good evening, ".$name."</h1>";
-                break;
-            case night:
+        
+        $hour = date(G);
+        
+        
+        switch ($hour) {
+            case ($hour >= 0 && $hour < 6):
                 echo "<h1>Good night, ".$name."</h1>";
                 break;
+            case ($hour >= 6 && $hour < 12):
+                echo "<h1>Good morning, ".$name."</h1>";
+                break;
+            case ($hour >= 12 && $hour < 18):
+                echo "<h1>Good afternoon, ".$name."</h1>";
+                break;
+            case ($hour >= 18 && $hour < 24):
+                echo "<h1>Good evening, ".$name."</h1>";
+                break;
+            
             default:
                 echo "<h1>Hello, ".$name."</h1>";
         }
             
     }
         
-    caption("night", "Oleg");
-    caption("day", "Max");
+    caption("Oleg");
     
     ?>
     
