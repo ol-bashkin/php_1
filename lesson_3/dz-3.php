@@ -101,7 +101,20 @@
         <?php echo texter($page) ?>
     </p>
     
+    <?php
+        
+    function shoutI($i)
+    {
+
+        echo $i;
+
+        return ++$i;
+
+    }
+
+    for ($i = 0; $i <= 10; $i = shoutI($i)) {};
     
+    ?>
     
     
 </body>
