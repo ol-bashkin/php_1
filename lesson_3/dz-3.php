@@ -106,7 +106,7 @@
     function shoutI($i)
     {
 
-        echo $i;
+        echo $i." ";
 
         return ++$i;
 
