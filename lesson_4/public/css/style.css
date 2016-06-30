@@ -1,0 +1,9 @@
+.passive {
+            text-decoration: none;
+            color: #ccc;
+            cursor: default;
+        }
+        
+.active {
+            color: #39c;
+        }

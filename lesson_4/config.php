@@ -8,6 +8,6 @@ define('LIB_DIR', SITE_ROOT . '/lib');
 define('TPL_DIR', SITE_ROOT . '/templates');
        
 define('TITLE', 'Четвертый урок');
-define('LAYOUT', 'base.php');
+define('LAYOUT', TPL_DIR . DIRECTORY_SEPARATOR . 'layout' . DIRECTORY_SEPARATOR . 'base.php');
        
 require_once(LIB_DIR . '/functions.php');

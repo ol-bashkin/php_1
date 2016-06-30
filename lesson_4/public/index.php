@@ -1,4 +1,11 @@
 <?php
 require_once('../config.php');
-renderPage();
-?>
+
+$route = (isset($_GET['route'])) ? $_GET['route'] : 'main';
+
+renderPage(
+    $route,
+    [
+        $_GET['id']
+    ]
+);

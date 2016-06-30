@@ -7,10 +7,11 @@ define('ERROR_NOT_FOUND', 1);
 define('ERROR_TEMPLATE_EMPTY', 2);
 
 
-function layout($layoutName, $meta, $title, $body)
+function layout($layoutName, $title, $menu, $body)
 {
-    render($layoutName, [
+    return render($layoutName, [
         "title" => $title,
+        "menu" => $menu,
         "body" => $body
     ]);
 };
@@ -36,9 +37,15 @@ function render($file, $variables = [])
 
 function renderPage($route, $params)
 {
-    $out = layout(
+    echo layout(
         LAYOUT,
         TITLE,
-        render(TPL_DIR . DIRECTORY_SEPARATOR . "")
-    )
-}
+        render(
+            TPL_DIR . DIRECTORY_SEPARATOR . "nav.php"
+        ),
+        render(
+            TPL_DIR . DIRECTORY_SEPARATOR . $route . ".php",
+            $params
+        )
+    );
+};
