@@ -21,4 +21,7 @@ class Entity
 }
 
 
-$e = new Entity();
+$e = new Entity('Eee', '100');
+
+
+echo '1' . $e->getName();
